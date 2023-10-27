@@ -1,9 +1,10 @@
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import session from './session'
+import bank_category from './bank_category'
 
 const rootReducer = combineReducers({
-  session,
+  session, bank_category
 });
 
 
