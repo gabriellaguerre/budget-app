@@ -1,9 +1,11 @@
 import requests
 import ast
+import os
 from flask import Blueprint, jsonify, session, request
 
 bank_category_routes = Blueprint('bank_category', __name__)
 
+AUTH = os.environ.get('AUTH')
 
 @bank_category_routes.route('/')
 def get_bank_categories():
@@ -12,7 +14,7 @@ def get_bank_categories():
     headers = {
         "accept": "application/json",
         "content-type": "application/json",
-        "authorization": 'Bearer ralLy57ZaXC70XG',
+        "authorization": AUTH,
     }
 
     categories = requests.get(url, headers=headers)
